@@ -1,6 +1,7 @@
 package com.thoughtworks.capability.gtb.entrancequiz.controller;
 
 import com.thoughtworks.capability.gtb.entrancequiz.domain.Student;
+import com.thoughtworks.capability.gtb.entrancequiz.domain.Team;
 import com.thoughtworks.capability.gtb.entrancequiz.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,5 +28,11 @@ public class StudentController {
     @ResponseStatus(HttpStatus.CREATED)
     public void addStudent(String name){
         studentService.addStudent(name);
+    }
+
+    @GetMapping("/teams")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Team> getTeams(){
+        return studentService.getTeams();
     }
 }
