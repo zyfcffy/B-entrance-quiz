@@ -22,4 +22,8 @@ public class StudentRepository {
     public List<Student> findAll(){
         return studentList;
     }
+
+    public void addStudent(String name){
+        studentList.add(new Student(studentList.size()+1,name));
+    }
 }
