@@ -39,8 +39,10 @@ public class StudentService {
             if (remain > 0) {
                 teams.add(new Team(String.format("%d组",i + 1), sortedStudent.subList(startIndex, startIndex + amountInEveryTeam + 1)));
                 remain--;
+                startIndex = startIndex + amountInEveryTeam + 1;
             } else {
                 teams.add(new Team(String.format("%d组", i + 1), sortedStudent.subList(startIndex, startIndex + amountInEveryTeam)));
+                startIndex = startIndex + amountInEveryTeam;
             }
         }
         return teams;
