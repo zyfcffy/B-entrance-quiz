@@ -26,7 +26,7 @@ public class StudentController {
 
     @PostMapping("/student")
     @ResponseStatus(HttpStatus.CREATED)
-    public void addStudent(String name){
+    public void addStudent(@RequestBody String name){
         studentService.addStudent(name);
     }
 
