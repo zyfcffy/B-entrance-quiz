@@ -11,8 +11,10 @@ import java.util.List;
 
 @Service
 public class StudentService {
+    //TODO GTB-工程实践: + StudentService.java:14 有抽取Magic number的意识
     private static final int TEAM_NUM = 6;
 
+    //TODO GTB-知识点: + StudentService.java:17 使用了构造器注入
     final StudentRepository studentRepository;
 
     public StudentService(StudentRepository studentRepository) {
@@ -27,6 +29,7 @@ public class StudentService {
         studentRepository.addStudent(name);
     }
 
+    //TODO GTB-工程实践: - StudentService.java:30 长方法，需要按模块抽取方法进行重构
     public List<Team> getTeams() {
         List<Student> studentList = studentRepository.findAll();
         List<Student> sortedStudent = new ArrayList<>(studentList);

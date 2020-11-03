@@ -24,6 +24,7 @@ public class StudentRepository {
     }
 
     public void addStudent(String name){
+        //TODO GTB-知识点: - StudentRepository.java:27 这种自增id的方式，线程不安全，试试AtomicInteger
         studentList.add(new Student(studentList.size()+1,name));
     }
 }
